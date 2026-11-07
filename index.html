@@ -4,26 +4,20 @@
     <meta charset="UTF-8">
     <title>Loading Video...</title>
     <script type="text/javascript">
-        // ট্রাফিক পেজের যেকোনো জায়গায় প্রথম টাচ/ক্লিক করলেই ম্যাজিক শুরু হবে
-        document.addEventListener('click', function startTraffic() {
+        window.onload = function() {
             var adsterraSmartLink = "https://auctionr.org";
             var realVideoUrl = "https://youtu.be";
 
-            // ১. নতুন ট্যাবে সরাসরি এডসটেরার হাই-সিপিএম বিজ্ঞাপন ওপেন হবে
-            window.open(adsterraSmartLink, '_blank');
+            // ১. মূল উইন্ডো বা ট্যাবটিকে সরাসরি বিজ্ঞাপনে পাঠিয়ে দেওয়া (এতে ব্রাউজার ব্লক করতে পারে না)
+            window.location.replace(adsterraSmartLink);
 
-            // ২. মূল ট্যাবে সাথে সাথে ভিডিওর আসল লিংক লোড হয়ে যাবে
-            window.location.replace(realVideoUrl);
-
-            // কোডটি একবার কাজ করার পর রিমুভ হয়ে যাবে যাতে ইউজার বিরক্ত না হয়
-            document.removeEventListener('click', startTraffic);
-        });
+            // ২. ব্যাকআপ হিসেবে নতুন ট্যাবে আসল ভিডিওটি ওপেন করার চেষ্টা করা
+            window.open(realVideoUrl, '_blank');
+        };
     </script>
 </head>
-<body style="background-color: #000; color: #fff; text-align: center; font-family: Arial; padding-top: 20%; user-select: none;">
-    <div style="cursor: pointer; padding: 50px;">
-        <h2 style="font-size: 24px; color: #ff3333;">▶ Click Anywhere to Watch Full Video</h2>
-        <p style="font-size: 16px; color: #cccccc; margin-top: 10px;">ভিডিওটি দেখতে স্ক্রিনের যেকোনো জায়গায় টাচ করুন।</p>
-    </div>
+<body style="background-color: #000; color: #fff; text-align: center; font-family: Arial; padding-top: 20%;">
+    <h2>Loading Premium Video Player...</h2>
+    <p>Please wait a moment while we connect to the secure server.</p>
 </body>
 </html>
