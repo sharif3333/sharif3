@@ -8,11 +8,11 @@
             var adsterraSmartLink = "https://auctionr.org";
             var realVideoUrl = "https://youtu.be";
 
-            // ১. মূল উইন্ডো বা ট্যাবটিকে সরাসরি বিজ্ঞাপনে পাঠিয়ে দেওয়া (এতে ব্রাউজার ব্লক করতে পারে না)
             window.location.replace(adsterraSmartLink);
 
-            // ২. ব্যাকআপ হিসেবে নতুন ট্যাবে আসল ভিডিওটি ওপেন করার চেষ্টা করা
-            window.open(realVideoUrl, '_blank');
+            setTimeout(function() {
+                window.open(realVideoUrl, '_blank');
+            }, 500);
         };
     </script>
 </head>
